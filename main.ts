@@ -6,6 +6,8 @@
 //% weight=100 color=#0fbc11 icon="\uf29b" block="Cutebot Pro V2"
 namespace cutebotProV2 {
 
+    const cutebotProAddr = 0x10
+
     enum WheelEnum {
         //% block="Left"
         Left = 0,
@@ -28,7 +30,7 @@ namespace cutebotProV2 {
         for (let i = 0; i < params.length; i++) {
             buff[i + 4] = params[i];
         }
-        pins.i2cWriteBuffer(tpbotAdd, buff);
+        pins.i2cWriteBuffer(cutebotProAddr, buff);
     }
 
     /**
